@@ -5,9 +5,8 @@ import ru.geekbrains.boot.model.Product;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+
 
 @Component
 public class ProductRepository implements ProductRepositoryInterface {
@@ -56,6 +55,7 @@ public class ProductRepository implements ProductRepositoryInterface {
       }
       return productID;
    }
+
 
 }
 

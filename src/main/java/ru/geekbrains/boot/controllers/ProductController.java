@@ -1,9 +1,8 @@
 package ru.geekbrains.boot.controllers;
 
-import lombok.RequiredArgsConstructor;
 import ru.geekbrains.boot.model.Product;
 import ru.geekbrains.boot.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +15,7 @@ import java.util.List;
 @RequestMapping("/products")
 @RequiredArgsConstructor
 public class ProductController {
-    private ProductService productService;
+    private  final ProductService productService;
 
     @GetMapping
     public String showAllProducts(Model model) {
@@ -24,7 +23,7 @@ public class ProductController {
         model.addAttribute("products", products);
         model.addAttribute("avgCost", productService.productAverageCost());
         model.addAttribute("count", productService.productCount());
-        return "all_products";}
+        return "products";}
 
     @PostMapping("/add")
     public String addNewProduct(@ModelAttribute Product product) {

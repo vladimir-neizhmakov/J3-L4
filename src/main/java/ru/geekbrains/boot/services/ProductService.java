@@ -1,19 +1,18 @@
 package ru.geekbrains.boot.services;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 import ru.geekbrains.boot.model.Product;
 import ru.geekbrains.boot.repositories.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ProductService{
+public class ProductService {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
  //   @Autowired
  //   public void SetProductRepository(ProductRepository productRepository){this.productRepository = productRepository;}
@@ -48,4 +47,5 @@ public class ProductService{
         avg /= productRepository.getProducts().size();
         return avg;
     }
+
 }
